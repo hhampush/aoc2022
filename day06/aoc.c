@@ -9,7 +9,7 @@ uint all_unique(char block[], uint unique_needed) {
     uint count[127] = {};
     uint u = 0;
     for (u = 0; u < unique_needed; u++) {
-        if (++count[block[u]] == 2) return 0;
+        if (++count[(int)(block[u])] == 2) return 0;
     }
     return u;
 }

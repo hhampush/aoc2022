@@ -9,21 +9,20 @@ uint all_unique(char block[], uint unique_needed) {
     uint count[127] = {};
     uint u = 0;
     for (u = 0; u < unique_needed; u++) {
-        if (++count[(int)(block[u])] == 2) return 0;
+        if (++count[(int)(block[u])] == 2)
+            return 0;
     }
     return u;
 }
 
-int main()
-{
+int main() {
     char *ptr = &_binary_input_txt_start;
     char *const env_part = getenv("part");
     uint const part_two = (env_part != NULL) && (strcmp(env_part, "part2") == 0);
     uint const unique_needed = (part_two ? 14 : 4);
 
     uint const len = strlen(ptr) - 4;
-    for (uint i = 0; i < len; i++)
-    {
+    for (uint i = 0; i < len; i++) {
         char block[unique_needed + 1];
         memset(block, 0, sizeof(block));
         strncpy(block, ptr + i, unique_needed);

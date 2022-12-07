@@ -30,3 +30,6 @@ erl_crash.dump
 
 #IntelliJ IDEA
 .idea
+
+*.o
+a.out

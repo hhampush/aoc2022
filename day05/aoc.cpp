@@ -2,18 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include <deque>
 extern char _binary_input_txt_start;
 typedef unsigned int uint;
 
-int main()
-{
+int main() {
     char *ptr = strtok(&_binary_input_txt_start, "\n");
     char *const env_part = getenv("part");
     uint const part_two = (env_part != NULL) && (strcmp(env_part, "part2") == 0);
     std::deque<uint> stack[9];
-    while (ptr != NULL)
-    {
+    while (ptr != NULL) {
         if (ptr[0] == ' ' || ptr[0] == '[') {
             uint const len = strlen(ptr);
             for (uint i = 1; i < len; i += 4) {
